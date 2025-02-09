@@ -1,22 +1,33 @@
 import axios from 'axios';
 
-const API_Key = import.meta.env.VITE_API_KEY;
-const BASE_URL = 'https://api.unsplash.com/search/photos';
+// const API_Key = import.meta.env.VITE_API_KEY;
+const BASE_URL =
+  'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+const API_Read_ACCESS_TOKEN =
+  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ODRkZmRiZTEwMGFiY2JjYTA1OGQ0NjczMWIxMDM1NSIsIm5iZiI6MTczOTA3OTg1NS41NCwic3ViIjoiNjdhODQwYWZiOTM2MGMzZTMzZTA4MzNjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.y-ACAq-pB1xEfGZwfhuDuURaVOkHNbwHnyTS1TbEQZg';
 
-const fetchImages = async (query, page) => {
+export const fetchMovies = async page => {
   const response = await axios.get(BASE_URL, {
     headers: {
-      Authorization: `Client-ID ${API_Key}`,
+      accept: 'application/json',
+      Authorization: `Bearer ${API_Read_ACCESS_TOKEN}`,
     },
     params: {
-      query,
-      orientation: 'portrait',
-      // color: 'red',
       page,
-      per_page: 9,
     },
   });
   return response.data;
 };
 
-export default fetchImages;
+export const fetchMovieByID = async id => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${API_Read_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  return response.data;
+};

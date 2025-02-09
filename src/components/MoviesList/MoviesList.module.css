@@ -1,0 +1,22 @@
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.listItem {
+  box-shadow: var(--shadow);
+  transition: transform 0.25s;
+}
+
+.listItem:hover,
+.listItem:focus {
+  transform: translateY(-4px);
+}
+
+.listItemLink {
+  padding: 0;
+}
