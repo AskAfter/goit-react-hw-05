@@ -1,7 +1,6 @@
 import s from './Movie.module.css';
 
 const Movie = ({ movie }) => {
-  console.log(movie);
   const imageUrl = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
   return (
     <div className={s.container}>

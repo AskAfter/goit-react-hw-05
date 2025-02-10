@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import SearchBox from '../../components/SearchBox/SearchBox';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchSearchMovies } from '../../services/api';
 import ErrorComp from '../../components/ErrorComp/ErrorComp';
 import MoviesList from '../../components/MoviesList/MoviesList';
@@ -13,16 +13,16 @@ const MoviesPage = () => {
   const productName = query.get('query') ?? '';
   const [movies, setMovies] = useState([]);
   const [isError, setIsError] = useState(false);
-  const isFirstRender = useRef(true);
+  // const isFirstRender = useRef(true);
   const [isLoading, setIsLoading] = useState(false);
   const [totalPages, setTotalPages] = useState(null);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
+    // if (isFirstRender.current) {
+    //   isFirstRender.current = false;
+    //   return;
+    // }
     const fetchMovies = async () => {
       if (!productName) return;
       try {
