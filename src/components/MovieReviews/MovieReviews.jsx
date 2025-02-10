@@ -1,23 +1,23 @@
-import { useContext, useEffect, useState } from 'react';
-import { MovieContext } from '../../context/MovieContext';
+import { useEffect, useState } from 'react';
 import Loader from '../Loader/Loader';
 import ErrorComp from '../ErrorComp/ErrorComp';
 import { fetchGetReview } from '../../services/api';
 import ReviewList from '../ReviewList/ReviewList';
+import { useParams } from 'react-router-dom';
 
 const MovieReviews = () => {
-  const movie = useContext(MovieContext);
   const [review, setReview] = useState(null);
   const [isError, setIsError] = useState(false);
   const [isLoad, setIsLoad] = useState(false);
+  const { movieId } = useParams();
 
   useEffect(() => {
-    if (!movie?.id) return;
+    if (!movieId) return;
 
     const getCast = async () => {
       try {
         setIsLoad(true);
-        const data = await fetchGetReview(movie.id);
+        const data = await fetchGetReview(movieId);
         setReview(data.results);
         setIsError(false);
       } catch {
@@ -28,9 +28,9 @@ const MovieReviews = () => {
     };
 
     getCast();
-  }, [movie]);
+  }, [movieId]);
 
-  if (!movie) {
+  if (!review) {
     return <Loader />;
   }
 

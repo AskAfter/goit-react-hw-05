@@ -1,23 +1,23 @@
-import { useContext, useEffect, useState } from 'react';
-import { MovieContext } from '../../context/MovieContext';
+import { useEffect, useState } from 'react';
 import { fetchGetCast } from '../../services/api';
 import Loader from '../Loader/Loader';
 import ErrorComp from '../ErrorComp/ErrorComp';
 import CastList from '../CastList/CastList';
+import { useParams } from 'react-router-dom';
 
 const MovieCast = () => {
-  const movie = useContext(MovieContext);
   const [cast, setCast] = useState(null);
   const [isError, setIsError] = useState(false);
   const [isLoad, setIsLoad] = useState(false);
+  const { movieId } = useParams();
 
   useEffect(() => {
-    if (!movie?.id) return;
+    if (!movieId) return;
 
     const getCast = async () => {
       try {
         setIsLoad(true);
-        const data = await fetchGetCast(movie.id);
+        const data = await fetchGetCast(movieId);
         setCast(data.cast);
         setIsError(false);
       } catch {
@@ -28,9 +28,9 @@ const MovieCast = () => {
     };
 
     getCast();
-  }, [movie]);
+  }, [movieId]);
 
-  if (!movie) {
+  if (!cast) {
     return <Loader />;
   }
 

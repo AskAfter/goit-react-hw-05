@@ -2,7 +2,10 @@
   list-style-type: none;
   justify-content: center;
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  border-top: 1px solid var(--textColor);
+  border-bottom: 1px solid var(--textColor);
+  margin-bottom: 30px;
   /* max-width: 830px; */
 }
 
@@ -25,6 +28,12 @@
 .link {
   display: inline-block;
   /* padding: 5px; */
-  background-color: var(--sectionColors);
+  background-color: transparent;
   margin: 0 auto;
+  transition: scale 0.25s;
+}
+
+.link:hover,
+.link:focus {
+  scale: 1.05;
 }

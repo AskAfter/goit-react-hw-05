@@ -7,7 +7,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { fetchMovieByID } from '../../services/api';
-import { MovieContext } from '../../context/MovieContext';
+// import { MovieContext } from '../../context/MovieContext';
 import Movie from '../../components/Movie/Movie';
 import Loader from '../../components/Loader/Loader';
 import ErrorComp from '../../components/ErrorComp/ErrorComp';
@@ -41,29 +41,29 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   return (
-    <MovieContext.Provider value={movie}>
-      <div>
-        <Link className={s.link} to={baseUrl.current}>
-          ---Go back---
-        </Link>
-        {movie && <Movie movie={movie} />}
-        <ul className={s.list}>
-          <li className={s.listItem}>
-            <NavLink className={buildLinkClass} to="cast">
-              Cast
-            </NavLink>
-          </li>
-          <li className={s.listItem}>
-            <NavLink className={buildLinkClass} to="reviews">
-              Review
-            </NavLink>
-          </li>
-        </ul>
-        {isError && <ErrorComp />}
-        {isLoad && <Loader />}
-        <Outlet />
-      </div>
-    </MovieContext.Provider>
+    // <MovieContext.Provider value={movie}>
+    <div>
+      <Link className={s.link} to={baseUrl.current}>
+        ---Go back---
+      </Link>
+      {movie && <Movie movie={movie} />}
+      <ul className={s.list}>
+        <li className={s.listItem}>
+          <NavLink className={buildLinkClass} to="cast">
+            Cast
+          </NavLink>
+        </li>
+        <li className={s.listItem}>
+          <NavLink className={buildLinkClass} to="reviews">
+            Review
+          </NavLink>
+        </li>
+      </ul>
+      {isError && <ErrorComp />}
+      {isLoad && <Loader />}
+      <Outlet />
+    </div>
+    // </MovieContext.Provider>
   );
 };
 export default MovieDetailsPage;
