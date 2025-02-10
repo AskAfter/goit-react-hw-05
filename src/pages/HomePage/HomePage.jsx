@@ -12,17 +12,17 @@ const HomePage = () => {
   const [totalPages, setTotalPages] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const isFirstRender = useRef(true);
+  // const isFirstRender = useRef(true);
   const handleClick = () => {
     if (page < totalPages) {
       setPage(prev => prev + 1);
     }
   };
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
+    // if (isFirstRender.current) {
+    //   isFirstRender.current = false;
+    //   return;
+    // }
     const getMovies = async () => {
       try {
         setIsLoading(true);
