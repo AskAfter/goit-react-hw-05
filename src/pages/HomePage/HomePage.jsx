@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchMovies } from '../../services/api';
 import s from './HomePage.module.css';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
@@ -12,17 +12,12 @@ const HomePage = () => {
   const [totalPages, setTotalPages] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  // const isFirstRender = useRef(true);
   const handleClick = () => {
     if (page < totalPages) {
       setPage(prev => prev + 1);
     }
   };
   useEffect(() => {
-    // if (isFirstRender.current) {
-    //   isFirstRender.current = false;
-    //   return;
-    // }
     const getMovies = async () => {
       try {
         setIsLoading(true);

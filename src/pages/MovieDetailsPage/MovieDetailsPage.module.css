@@ -3,26 +3,28 @@
   justify-content: center;
   display: flex;
   gap: 30px;
+  /* max-width: 830px; */
 }
 
 .listItem {
   padding: 8px;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   transition: transform 0.25s;
   border-radius: 5px;
 }
 
-.listItem:hover,
-.listItem:focus {
-  transform: translateY(-4px);
-}
+/* .listItem:hover,
+  .listItem:focus {
+    transform: scale(1.05);
+  } */
 
 .active {
   text-decoration: underline;
 }
 
-s.link {
+.link {
   display: inline-block;
-  padding: 5px;
-  color: black;
+  /* padding: 5px; */
+  background-color: var(--sectionColors);
+  margin: 0 auto;
 }

@@ -1,5 +1,5 @@
 .photo {
-  width: 150px;
+  width: 145px;
 }
 .name {
   text-align: center;
@@ -11,4 +11,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 130px;
+}
+
+@media screen and (min-width: 768px) {
+  .photo {
+    width: 150px;
+  }
 }

@@ -9,8 +9,9 @@
   width: 300px;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
+
 .thumb {
   display: flex;
   flex-direction: column;
@@ -20,4 +21,29 @@
   /* justify-content: center;
   align-items: center; */
   /* width: 200px; */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* min-width: 768px;
+    max-width: 990px; */
+    width: 100%;
+  }
+  .thumb {
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 1158px;
+  }
+  .thumb {
+    height: 450px;
+  }
 }
