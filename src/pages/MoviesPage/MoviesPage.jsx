@@ -34,7 +34,6 @@ const MoviesPage = () => {
         }
         setMovies(prev => [...prev, ...data.results]);
         setTotalPages(data.total_pages);
-        console.log(data);
         setIsError(false);
       } catch {
         setIsError(true);
