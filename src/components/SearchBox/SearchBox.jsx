@@ -8,7 +8,7 @@ const SearchBox = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (value === '') {
-      toast.error('fill search field', {
+      toast.error('Fill the search field', {
         style: {
           padding: '16px',
           color: 'white',
@@ -18,13 +18,14 @@ const SearchBox = ({ onSubmit }) => {
           primary: '#802000',
           secondary: '#FFFAEE',
         },
-        duration: 1000,
+        duration: 2000,
       });
       return;
     }
     onSubmit(value);
     setValue('');
   };
+
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <div className={s.inputWrapper}>
@@ -45,4 +46,5 @@ const SearchBox = ({ onSubmit }) => {
     </form>
   );
 };
+
 export default SearchBox;
