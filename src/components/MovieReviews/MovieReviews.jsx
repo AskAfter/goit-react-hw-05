@@ -36,7 +36,7 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <h2>Reviews for {movie?.title}</h2>
+      {/* <h2>Reviews for {movie?.title}</h2> */}
       {isLoad && <Loader />}
       {isError && <ErrorComp />}
       {review && review.length > 0 ? (
