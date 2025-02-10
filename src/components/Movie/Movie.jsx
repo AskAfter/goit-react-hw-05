@@ -1,7 +1,8 @@
 import s from './Movie.module.css';
 
 const Movie = ({ movie }) => {
-  const imageUrl = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+  console.log(movie);
+  const imageUrl = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
   return (
     <div className={s.container}>
       <img className={s.poster} src={imageUrl} alt="Movie poster" />

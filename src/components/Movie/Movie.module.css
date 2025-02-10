@@ -4,6 +4,12 @@
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: var(--shadow);
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 .thumb {
   display: flex;
@@ -11,8 +17,7 @@
   justify-content: space-around;
   background-color: var(--sectionColors);
   padding-left: 20px;
-  border-radius: 0 10px 10px 0px;
-}
-.poster {
-  border-radius: 10px 0 0 10px;
+  /* justify-content: center;
+  align-items: center; */
+  /* width: 200px; */
 }

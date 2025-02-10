@@ -24,6 +24,7 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   background-color: var(--backGroundColor);
+  width: 100%;
 }
 
 h1,
@@ -62,7 +63,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  /* min-height: 100vh; */
   justify-content: center;
 }
 
