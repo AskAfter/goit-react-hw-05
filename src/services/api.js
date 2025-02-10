@@ -31,3 +31,42 @@ export const fetchMovieByID = async id => {
   );
   return response.data;
 };
+
+export const fetchMovieCast = async id => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${API_Read_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  return response.data;
+};
+
+export const fetchGetCast = async id => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`,
+    {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${API_Read_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  return response.data;
+};
+
+export const fetchGetReview = async id => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${id}/reviews?language=en-US&page=1`,
+    {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${API_Read_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  return response.data;
+};

@@ -62,7 +62,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   justify-content: center;
 }
 
@@ -80,7 +80,7 @@ button {
   font-family: inherit;
   background-color: var(--buttonColor);
   cursor: pointer;
-  color: var(--backGroundColor);
+  color: var(--textColor);
   transition: border-color 0.25s;
   box-shadow: var(--shadow);
   transition: transform 0.25s, border-color 0.25s;

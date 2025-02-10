@@ -1,0 +1,14 @@
+.photo {
+  width: 150px;
+}
+.name {
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 130px;
+}

@@ -27,9 +27,9 @@ const HomePage = () => {
       try {
         setIsLoading(true);
         const data = await fetchMovies(page);
-        console.log(data);
         setTotalPages(data.total_pages);
         setMovies(prev => [...prev, ...data.results]);
+        setIsError(false);
       } catch {
         setIsError(true);
       } finally {
@@ -43,8 +43,8 @@ const HomePage = () => {
     <div className={s.homeSection}>
       <MoviesList movies={movies} />
       {page < totalPages && <LoadMoreBtn handleClick={handleClick} />}
-      {!isError && <ErrorComp />}
-      {isLoading && <Loader />}
+      {isError && <ErrorComp />}
+      {isLoading && !isError && <Loader />}
     </div>
   );
 };
