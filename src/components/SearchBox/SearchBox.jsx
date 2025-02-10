@@ -7,7 +7,7 @@ const SearchBox = ({ onSubmit }) => {
   const [value, setValue] = useState('');
   const handleSubmit = e => {
     e.preventDefault();
-    if (value === '') {
+    if (value.trim() === '') {
       toast.error('Fill the search field', {
         style: {
           padding: '16px',
@@ -36,7 +36,7 @@ const SearchBox = ({ onSubmit }) => {
           autoComplete="off"
           autoFocus
           placeholder="Search movies"
-          onChange={e => setValue(e.target.value.trim())}
+          onChange={e => setValue(e.target.value)}
           value={value}
         />
       </div>
